@@ -1,34 +1,34 @@
-function checkStringLenght(string, maxLength) {
-  if (string.length >= maxLength) {
-    console.log(true)
+const cauntString = function(string, size) {
+  if (string.length >= size) {
     return true;
   } else {
-    console.log(false)
     return false;
   }
-}
-
+};
 
 // Строка короче 20 символов
-checkStringLenght('проверяемая строка', 20); // true
+cauntString('проверяемая строка', 20); // true
 // Длина строки ровно 18 символов
-checkStringLenght('проверяемая строка', 18); // true
+cauntString('проверяемая строка', 18); // true
 // Строка длиннее 10 символов
-checkStringLenght('проверяемая строка', 10); // false
+cauntString('проверяемая строка', 10); // false
 
 
+function palindrom (string) {
+  string = string.toLowerCase().toLowerCase(' ', '');
+  let reversed = '';
 
-
-function palindorm (str) {
-
-  str = str.toLowerCase()
-  str = str.replaceAll('', '');
-
-  let reversed = ''
-
-  for (let i = str.length -1; i >= 0 ; i--) {
-    reversed = reversed + reversed[i]
+  for (let i = string.length - 1; i >= 0; i--) {
+    reversed = reversed + string[i];
   }
-  return str === reversed;
+  return string === reversed;
 }
-palindorm ()
+
+// Строка является палиндромом
+palindrom('топот'); // true
+// Несмотря на разный регистр, тоже палиндром
+palindrom('ДовОд'); // true
+// Это не палиндром
+palindrom('Кекс'); // false
+
+
