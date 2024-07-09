@@ -16,9 +16,6 @@ checkStringLenght('проверяемая строка', 18); // true
 // Строка длиннее 10 символов
 checkStringLenght('проверяемая строка', 10); // false
 
-
-
-
 function palindorm (str) {
 
   str = str.toLowerCase()
