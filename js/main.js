@@ -53,8 +53,8 @@ const creatPicture = (index) => ({
   id: `photos/${{index}}.jpg`,
   url: '',
   description: getRandomArrayElement (description),
-  likes getRandomInteger (minLike, maxLike),
-  comments Array.from({length: getRandomInteger (minCommentCount, maxCommentCount)}, createComment)
+  likes: getRandomInteger (minLike, maxLike),
+  comments: Array.from({length: getRandomInteger (minCommentCount, maxCommentCount)}, createComment)
 });
 
 const getPictures = () => Array.from(
