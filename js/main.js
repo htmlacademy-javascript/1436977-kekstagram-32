@@ -7,21 +7,6 @@ const letDescription = [
   'работаю дома', 'чилю на диване', 'Катаюсь на роликах', 'занимаюсь в тренажерном зале'
 ];
 
-
-/**
- * Создаем объект с нужными ключами
- */
-
-const makeObject = (idx) => ({
-  id: getRandomId(),
-  url: getRandomUrl(),
-  description: 'ad',
-  likes: 213,
-  comments: 23
-});
-
-makeObject();
-
 /**
  * Данная функция создает массив объектов в кол-ве 25шт
  */
@@ -41,7 +26,7 @@ makePhotos(25);
 function getRandomId(min, max) {
   const minId = Math.ceil(min);
   const maxId = Math.floor(max);
-  return Math.floor(Math.random() * (maxId - minId) + minId); // The maximum is exclusive and the minimum is inclusive
+  return Math.floor(Math.random() * (maxId - minId) + minId);
 }
 getRandomId (1, 25);
 
@@ -55,12 +40,23 @@ function getRandomUrl(min, max) {
 }
 getRandomUrl (1, 25);
 
-// url, строка — адрес картинки вида photos/{{i}}.jpg, где {{i}} — это число от 1 до 25. Адреса картинок не должны повторяться.
+/**
+ * Создаем отдельную функцию для получения отдельного рандомного числа
+ */
+function getRandomInteger (a, b) {
+  const lower = Math.ceil(Math.min(a, b));
+  const upper = Math.floor(Math.max(a, b));
+  const result = Math.random() * (upper - lower + 1) + lower;
+  return Math.floor(result);
+}
 
-// const createComment = () => (
-//   {
-//     id: generateRandomId(),
-//     avatar: img/avatar-${getRandomInteger(minAvatarCount, maxAvatarCount)}.svg,
-//     message: 'В целом всё неплохо. Но не всё.',
-//     name: getRandomArrayElement (names),
-//   })
+getRandomInteger();
+
+
+const randomAvatarNumber = getRandomInteger(1, 6);
+
+function getRandomElementFromArray (element) {
+  return element[getRandomInteger(0, element.length - 1)];
+}
+
+
