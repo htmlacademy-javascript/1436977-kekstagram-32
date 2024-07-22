@@ -1,5 +1,4 @@
-import {getRandomInt, getRandomElement} from './util';
-export {generatePhotos} from './data.js';
+import {getRandomInt, getRandomElement} from './util.js';
 
 // Функция generateComments() создает массив случайных комментариев.
 function generateComments() {
@@ -54,4 +53,6 @@ function generatePhotos() {
   }
   return photos; // Возвращаем массив фотографий.
 }
+
+export {generatePhotos};
 
